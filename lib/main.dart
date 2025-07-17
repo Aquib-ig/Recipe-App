@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/controllers/favorite_controller.dart';
 import 'package:recipe_app/controllers/recipe_controller.dart';
 import 'package:recipe_app/controllers/theme_controller.dart';
 import 'package:recipe_app/firebase_options.dart';
@@ -16,12 +17,14 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(RecipeAdapter());
   await Hive.openBox<Recipe>("recipesBox");
+    await Hive.openBox<Recipe>("favoritesBox"); 
   AppLoggerHelper.initialize();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => RecipeController()),
         ChangeNotifierProvider(create: (_) => ThemeController()),
+        ChangeNotifierProvider(create: (_) => FavoriteController()),
       ],
       child: const MyApp(),
     ),

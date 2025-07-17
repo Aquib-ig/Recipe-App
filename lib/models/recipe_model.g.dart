@@ -19,20 +19,20 @@ class RecipeAdapter extends TypeAdapter<Recipe> {
     return Recipe(
       id: fields[1] as int?,
       name: fields[2] as String?,
+      ingredients: (fields[3] as List?)?.cast<String>(),
+      instructions: (fields[4] as List?)?.cast<String>(),
       prepTimeMinutes: fields[5] as int?,
       cookTimeMinutes: fields[6] as int?,
       servings: fields[7] as int?,
       difficulty: fields[8] as String?,
       cuisine: fields[9] as String?,
       caloriesPerServing: fields[10] as int?,
+      tags: (fields[11] as List?)?.cast<String>(),
       userId: fields[12] as int?,
       image: fields[13] as String?,
       rating: fields[14] as double?,
       reviewCount: fields[15] as int?,
-      ingredients: (fields[3] as List).cast<String>(),
-      instructions: (fields[4] as List).cast<String>(),
-      tags: (fields[11] as List).cast<String>(),
-      mealType: (fields[16] as List).cast<String>(),
+      mealType: (fields[16] as List?)?.cast<String>(),
     );
   }
 

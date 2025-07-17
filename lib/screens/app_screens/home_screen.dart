@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/screens/app_screens/favorite_recipe_screen.dart';
 import 'package:recipe_app/screens/app_screens/profile_screen.dart';
 import 'package:recipe_app/screens/app_screens/recipe_screen.dart';
 import 'package:recipe_app/widgets/cutom_bottom_nav_bar.dart';
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static const List<Widget> _pages = [
     RecipeScreen(),
     Center(child: Text("Search Page")),
-    Center(child: Text("Favorites Page")),
+    FavoriteRecipeScreen(),
     ProfileScreen(),
   ];
   void _onItemTapped(int index) {
