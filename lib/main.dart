@@ -6,7 +6,7 @@ import 'package:recipe_app/controllers/auth_controller.dart';
 import 'package:recipe_app/controllers/favorite_controller.dart';
 import 'package:recipe_app/controllers/recipe_controller.dart';
 import 'package:recipe_app/controllers/theme_controller.dart';
-import 'package:recipe_app/firebase_options.dart';
+import 'package:recipe_app/config/firebase_options.dart';
 import 'package:recipe_app/models/recipe_model.dart';
 import 'package:recipe_app/screens/auth_screens/auth_gate.dart';
 import 'package:recipe_app/themes/theme.dart';
