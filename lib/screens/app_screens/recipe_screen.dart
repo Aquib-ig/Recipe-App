@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:recipe_app/controllers/favorite_controller.dart';
 import 'package:recipe_app/controllers/recipe_controller.dart';
 import 'package:recipe_app/screens/app_screens/recipe_detail_screen.dart';
+import 'package:recipe_app/widgets/category_chips.dart';
 import 'package:recipe_app/widgets/custom_tile.dart';
 
 class RecipeScreen extends StatelessWidget {
@@ -12,6 +13,7 @@ class RecipeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final recipeController = context.watch<RecipeController>();
     final favoriteController = context.watch<FavoriteController>();
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -37,13 +39,11 @@ class RecipeScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
-
                   Text(
                     "What are you cooking today?",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   ),
                   SizedBox(height: 10),
-
                   TextField(
                     onChanged: (query) {
                       recipeController.searchRecipes(query);
@@ -56,6 +56,17 @@ class RecipeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 10),
+
+                  /// here is the chip row
+                  CategoryChips(
+                    onCategorySelected: (category) {
+                      recipeController.filterByCategory(category);
+                      recipeController.searchRecipes(
+                        "",
+                      ); // reset search on category change
+                    },
+                  ),
                 ],
               ),
             ),
@@ -64,9 +75,10 @@ class RecipeScreen extends StatelessWidget {
               child: recipeController.isLoading
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
-                      itemCount: recipeController.recipes.length,
+                      itemCount: recipeController.filteredRecipes.length,
                       itemBuilder: (context, index) {
-                        final recipe = recipeController.recipes[index];
+                        final recipe = recipeController.filteredRecipes[index];
+
                         return CustomTile(
                           onTap: () {
                             Navigator.push(

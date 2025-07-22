@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/controllers/auth_controller.dart';
 import 'package:recipe_app/controllers/theme_controller.dart';
+import 'package:recipe_app/widgets/app_button.dart';
 import 'package:recipe_app/widgets/profile_tile.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -33,20 +35,12 @@ class ProfileScreen extends StatelessWidget {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    color: Color(0xfff2680d),
-                    borderRadius: BorderRadius.circular(24),
-                  ),
+                child: AppButton(
+                  onTap: () {},
                   child: Center(
                     child: Text(
                       "Edit Profile",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),
@@ -59,7 +53,6 @@ class ProfileScreen extends StatelessWidget {
                 suffixIcon: Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {},
               ),
-              Divider(),
 
               ProfileTile(
                 prefixIcon: Icon(Icons.star_border_rounded),
@@ -67,7 +60,6 @@ class ProfileScreen extends StatelessWidget {
                 suffixIcon: Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {},
               ),
-              Divider(),
 
               ProfileTile(
                 prefixIcon: Icon(Icons.visibility),
@@ -80,7 +72,6 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 onTap: () {},
               ),
-              Divider(),
 
               ProfileTile(
                 prefixIcon: Icon(Icons.privacy_tip_outlined),
@@ -88,15 +79,16 @@ class ProfileScreen extends StatelessWidget {
                 suffixIcon: Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {},
               ),
-              Divider(),
 
               ProfileTile(
                 prefixIcon: Icon(Icons.logout),
                 text: "Logout",
                 suffixIcon: Icon(Icons.arrow_forward_ios_rounded),
-                onTap: () {},
+                onTap: () async {
+                  final auth = context.read<AuthController>();
+                  await auth.signOut();
+                },
               ),
-              Divider(),
             ],
           ),
         ),

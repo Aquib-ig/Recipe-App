@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/screens/app_screens/favorite_recipe_screen.dart';
 import 'package:recipe_app/screens/app_screens/profile_screen.dart';
 import 'package:recipe_app/screens/app_screens/recipe_screen.dart';
+import 'package:recipe_app/screens/app_screens/add_recipe_screen.dart';
 import 'package:recipe_app/widgets/cutom_bottom_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static const List<Widget> _pages = [
     RecipeScreen(),
-    Center(child: Text("Search Page")),
+    AddRecipeScreen(),
     FavoriteRecipeScreen(),
     ProfileScreen(),
   ];
