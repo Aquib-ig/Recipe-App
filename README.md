@@ -2,6 +2,22 @@
 
 A new Flutter project.
 
+
+## Screenshots
+
+Auth Screen:
+![SigIn Screen](IMG-20250815-WA0011.jpg)
+![SigUn Screen](IMG-20250815-WA0009.jpg)
+
+App Screens:
+![Home Screen](IMG-20250815-WA0010.jpg)
+![Favorite Screen](IMG-20250815-WA0008.jpg)
+![Search Screen](IMG-20250815-WA0003.jpg)
+
+Setting Screen:
+![Setting Screen](IMG-20250815-WA0007.jpg)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
