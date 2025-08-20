@@ -3,20 +3,23 @@
 A new Flutter project.
 
 
-## Screenshots
+## Auth Screens
+<p>
+  <img src="IMG-20250815-WA0011.jpg" alt="SignIn" width="200"/>
+  <img src="IMG-20250815-WA0009.jpg" alt="SignUp" width="200"/>
+</p>
 
-Auth Screen:
-![SigIn Screen](IMG-20250815-WA0011.jpg)
-![SigUn Screen](IMG-20250815-WA0009.jpg)
+## App Screens
+<p>
+  <img src="IMG-20250815-WA0010.jpg" alt="Home" width="200"/>
+  <img src="IMG-20250815-WA0008.jpg" alt="Favorite" width="200"/>
+  <img src="IMG-20250815-WA0003.jpg" alt="Search" width="200"/>
+</p>
 
-App Screens:
-![Home Screen](IMG-20250815-WA0010.jpg)
-![Favorite Screen](IMG-20250815-WA0008.jpg)
-![Search Screen](IMG-20250815-WA0003.jpg)
-
-Setting Screen:
-![Setting Screen](IMG-20250815-WA0007.jpg)
-
+## Setting Screen
+<p>
+  <img src="IMG-20250815-WA0007.jpg" alt="Settings" width="200"/>
+</p>
 
 ## Getting Started
 
