@@ -1,4 +1,10 @@
-# 🍳 Recipe App
+# 🍳 Recipe App  
+![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![GitHub Stars](https://img.shields.io/github/stars/Aquib-ig/recipe_app?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Aquib-ig/recipe_app?style=social)
+
 
 A **cross-platform mobile app** built with **Flutter** to explore, search, and save tasty recipes.  
 It features a clean UI, light & dark themes, debounced search, image caching, and favorites.
